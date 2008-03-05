@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>JSSpec results</title>
+<link rel="stylesheet" type="text/css" href="JSSpec.css" />
+<script type="text/javascript" src="../../public/javascripts/jquery.js"></script>
+<script type="text/javascript" src="../../public/javascripts/jquery.debug.js"></script>
+<!-- -->
+<script type="text/javascript" src="../../public/javascripts/jquery.uitablefilter.js"></script>
+<script type="text/javascript" src="diff_match_patch.js"></script>
+<script type="text/javascript" src="JSSpec.js"></script>
+<script type="text/javascript">// <![CDATA[
+
+describe('has_words', {
+  before_all : function(){
+    thw = 'test has words'
+    has_words = $.uiTableFilter.has_words
+  },
+
+  'should return true when word is present' : function(){
+    value_of(has_words(thw, ['t'])).should_be_true()
+    value_of(has_words(thw, ['t'])).should_be_true()
+    value_of(has_words(thw, ['te'])).should_be_true()
+    value_of(has_words(thw, ['tes'])).should_be_true()
+    value_of(has_words(thw, ['test'])).should_be_true()
+    value_of(has_words(thw, [' has '])).should_be_true()
+    value_of(has_words(thw, ['words'])).should_be_true()
+    value_of(has_words(thw, ['test has words'])).should_be_true()
+    value_of(has_words(thw, ['test','has'])).should_be_true()
+    value_of(has_words(thw, ['test','has','words'])).should_be_true()
+  },
+  'should return false when word is not present' : function(){
+    value_of(has_words(thw, ['z'])).should_be_false()
+    value_of(has_words(thw, ['tz'])).should_be_false()
+    value_of(has_words(thw, ['t','z'])).should_be_false()
+    value_of(has_words(thw, ['test has z'])).should_be_false()
+    value_of(has_words(thw, ['test','has','z'])).should_be_false()
+  },
+  'should be optionally case sensitive' : function(){
+    value_of(has_words(thw, ['T'], true)).should_be_false()
+    value_of(has_words(thw, ['tE'], true)).should_be_false()
+    value_of(has_words(thw, ['t','wOr'], true)).should_be_false()
+    value_of(has_words(thw, ['test has'], false)).should_be_true()
+  }
+})
+
+// ]]></script>
+</head>
+<body>
+  <div id="specloadfailure">
+    <p> <h1> Error running specs !!!! </h1> <h3> most likely a syntax error </h3> </p>
+    <table id="pretesttable" style="display:none;">
+      <thead id="pretesthead">
+        <tr id="preheadrow"> <th>foo</th><th>bar</th> </tr>
+      </thead>
+      <tbody> <tr id="pretestrow1"> <td>foo</td><td>bar</td> </tr> </tbody>
+    </table>
+
+    <table id="testtable">
+      <thead id="testhead">
+        <tr id="headrow"> <th>sea</th><th>land</th> </tr>
+      </thead>
+      <tbody>
+        <tr id="testrow1"> <td>turtle</td><td>dog</td> </tr>
+        <tr id="testrow2"> <td>whale</td><td>monkey</td> </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
