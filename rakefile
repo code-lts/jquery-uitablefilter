@@ -1,0 +1,16 @@
+desc "mirror to jquery svn repository"
+task :mirror do
+  name = File.basename(Dir.pwd).gsub(/[^-]+-/,'')
+  svn_dir = "/home/greg/js/trunk/plugins/#{name}/"
+  `cp -R * #{svn_dir}`
+
+  commit_msg = `git log | head -5 | tail -1`.chomp
+  Dir.chdir(svn_dir) do
+    `svn commit -m '#{commit_msg}'`
+  end
+end
+
+desc "run test"
+task :test do
+  `konqueror #{Dir[ 'test/*_spec.html' ].join(' ')}`
+end
