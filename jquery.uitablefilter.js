@@ -1,8 +1,10 @@
 /*
- * Copyright (c) 2008 Greg Weber webs.dev gmail
+ * Copyright (c) 2008 Greg Weber greg at gregweber.info
  * Dual licensed under the MIT and GPL licenses:
  * http://www.opensource.org/licenses/mit-license.php
  * http://www.gnu.org/licenses/gpl.html
+ *
+ * documentation at http://gregweber.info/projects/uitablefilter
  *
  * allows table rows to be filtered (made invisible)
  * <code>
