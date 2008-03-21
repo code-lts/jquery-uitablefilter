@@ -1,16 +1,32 @@
+def exit_msg(msg, code=1)
+  puts msg
+  exit(code)
+end
+def run command
+  res = `#{command}`
+  exit_msg res, $?.exitstatus if $?.exitstatus != 0
+  res
+end
+def out command
+  (puts (run command))
+end
+
 desc "mirror to jquery svn repository"
 task :mirror do
-  name = File.basename(Dir.pwd).gsub(/[^-]+-/,'')
-  svn_dir = "/home/greg/js/trunk/plugins/#{name}/"
-  `cp -R * #{svn_dir}`
+  name = File.basename(Dir.pwd).gsub(/[^-]+-/,'').gsub(/(^uitable)(.)/) do
+    "uiTable#{$2.upcase}"
+  end
+  svn_dir = "/home/greg/src/jqueryjs/plugins/#{name}/"
+  puts "copying to directory: #{svn_dir}"
+  out "cp -R * #{svn_dir}"
 
   commit_msg = `git log | head -5 | tail -1`.chomp
   Dir.chdir(svn_dir) do
-    `svn commit -m '#{commit_msg}'`
+    out "svn commit -m '#{commit_msg}'"
   end
 end
 
 desc "run test"
 task :test do
-  `konqueror #{Dir[ 'test/*_spec.html' ].join(' ')}`
+  `#{ENV['BROWSER'] || 'konqueror'} #{Dir[ 'test/*_spec.html' ].join(' ')}`
 end
