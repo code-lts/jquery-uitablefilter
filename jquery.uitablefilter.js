@@ -70,7 +70,7 @@ jQuery.uiTableFilter = function(jq, phrase, column, ifHidden){
   }
 
   last_phrase = phrase;
-  if( new_hidden ) ifHidden();
+  if( ifHidden && new_hidden ) ifHidden();
   return jq;
 };
 jQuery.uiTableFilter.last_phrase = ""
