@@ -25,29 +25,22 @@ jQuery.uiTableFilter = function(jq, phrase, column, ifHidden){
   var phrase_length = phrase.length;
   var words = phrase.toLowerCase().split(" ");
 
-  var success = function(elem) { elem.show() }
-  var failure = function(elem) { elem.hide() }
+  // these function pointers may change
+  var matches = function(elem) { elem.show() }
+  var noMatch = function(elem) { elem.hide(); new_hidden = true }
+  var getText = function(elem) { return elem.text() }
 
   if( column ) {
     var index = null;
     jq.find("thead > tr:last > th").each( function(i){
       if( $(this).text() == column ){
-        index = i;
-        return false;
+        index = i; return false;
       }
     });
-    var iselector = "td:eq(" + index + ")";
-  
-    var search_text = function( ){
-      var elem = jQuery(this);
-      jQuery.uiTableFilter.has_words( jQuery(elem.find(iselector)).text(), words ) ?
-        success(elem) : failure(elem);
-    }
-  }
-  else {
-    var search_text = function(){
-        var elem = jQuery(this);
-        jQuery.uiTableFilter.has_words( elem.text(), words ) ? elem.show() : elem.hide();
+    if( index == null ) throw("given column: " + column + " not found")
+
+    getText = function(elem){ return jQuery(elem.find(
+      ("td:eq(" + index + ")")  )).text()
     }
   }
 
@@ -59,20 +52,29 @@ jQuery.uiTableFilter = function(jq, phrase, column, ifHidden){
     if( phrase[-1] === " " )
     { this.last_phrase = phrase; return false; }
 
-    success = function(elem) { elem.hide(); new_hidden = true; }
-    failure = function(elem) {;}
-    var words = words[-1];
-    jq.find("tbody tr:visible").each( search_text )
+    var words = words[-1]; // just search for the newest word
+
+    // only hide visible rows
+    matches = function(elem) {;}
+    var elems = jq.find("tbody > tr:visible")
   }
   else {
     new_hidden = true;
-    jq.find("tbody > tr").each( search_text );
+    var elems = jq.find("tbody > tr")
   }
 
+  elems.each(function(){
+    var elem = jQuery(this);
+    jQuery.uiTableFilter.has_words( getText(elem), words, false ) ?
+      matches(elem) : noMatch(elem);
+  });
+
   last_phrase = phrase;
-  if( new_hidden ) ifHidden();
+  if( ifHidden && new_hidden ) ifHidden();
   return jq;
 };
+
+// caching for speedup
 jQuery.uiTableFilter.last_phrase = ""
 
 // not jQuery dependent
