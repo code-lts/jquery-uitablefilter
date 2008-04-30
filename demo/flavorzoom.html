@@ -25,20 +25,20 @@
 
 <pre>
 $(function() { 
-  var theTable = $('table.food_planner');
+  var theTable = $('table.food_planner')
 
-  theTable.find("tbody > tr").mousedown(function(){
-    $(this).find(":checkbox").click();
+  theTable.find("tbody > tr").find("td:eq(1)").mousedown(function(){
+    $(this).prev().find(":checkbox").click()
   });
 
   $("#filter").keyup(function() {
     $.uiTableFilter( theTable, this.value );
-  });
+  })
 
   $('#filter-form').submit(function(){
-    theTable.find("tbody > tr:visible:first").mousedown();
+    theTable.find("tbody > tr:visible > td:eq(1)").mousedown();
     return false;
-  }).focus();
+  }).focus(); //Give focus to input field
 });  
 </pre>
 							
