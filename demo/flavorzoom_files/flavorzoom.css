@@ -1,0 +1,1166 @@
+html {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #f6f1d4 ;	/* cream */
+	font-size: 90%;
+	font-family:Georgia,Arial,Helvetica,sans-serif;
+	font-size:1em;
+	margin-bottom:30px;
+	margin-left:40px;
+	margin-right:40px;
+}
+
+a:link {text-decoration: underline;color:black;}
+a:visited {text-decoration: underline;color:black;}
+a:active {text-decoration: underline;color:#096327;}
+a:hover {text-decoration: underline;color:#096327;}
+
+
+#main_holder {
+	text-align: left;
+}
+
+ul {
+/*
+	list-style: url(../img/list_bullet.jpg);
+*/
+}
+
+em {
+	color: black;
+}
+
+div, h1 {
+	margin: 0px;
+	padding: 0px;
+}
+
+img { 
+	border:0px; 
+}
+
+#hidden { display: none; }
+
+.hidden { display:none }
+
+/*
+#pageheading {
+	background: url(../img/header.jpg) no-repeat left;
+	text-indent: -5000px;
+	height: 169px;
+	width: 770px;
+}
+*/
+
+#mainbody {
+	padding-left: 24px;
+	padding-right: 30px;
+	padding-top: 0px;
+}
+
+#mainbody p {
+}
+
+#menu_list {
+	float: left;
+	list-style: none;
+	margin: 20px 0px 0px 5px;
+	padding: 0px;
+}
+
+#menu_list li {
+	display:inline;
+}
+
+#menu_list a {
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+	padding-left: 30px;
+	display: block;
+	margin:5px 0 0 0;
+	line-height: 23px;
+}
+
+#menu_list a:hover {
+	color: #6CB8E9;
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+	color:black;
+}
+
+h2, h3 {
+	font-weight:normal;
+	font-size: 150%;
+}
+
+h2 a {
+	color: black;
+}
+
+h2 a:hover {
+	color: white;
+	background-color: black;
+}
+
+
+hr {
+	background: black;
+	color: black;
+	border: 1px solid black;
+}
+
+#footer {
+	color: #096327;  /* forest green */
+	font-size:small;
+	font-style: italic;
+	margin:15px 0 0 0;
+	text-align:center;
+}
+
+#footer a:link {text-decoration: underline;color:black;}
+#footer a:visited {text-decoration: underline;color:black;}
+#footer a:active {text-decoration: underline;color:#096327;}
+#footer a:hover {text-decoration: underline;color:#096327;}
+
+/* FOODS I ADD page */
+
+/* Two Columns - for use with FOODS I ADD*/
+/* per http://www.alistapart.com/articles/negativemargins/ */
+
+
+#two_col_wrapper {
+	background: #fdfae9 ;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	width: 800px;
+	padding-left: 20px;
+	padding-right: 0px;
+}
+#two_col_header {
+	width: 800px;
+}
+#two_col_container {
+	width: 800px;
+	float: left;
+	margin-right: -400px;
+}
+#two_col_left_content {
+	margin-right: 400px;
+}
+#two_col_right_content {
+	width: 400px;
+	float: right;
+}
+#two_col_footer {
+	width: 800px;
+}
+
+h1 {
+	margin-top: 0;
+}
+.two_col_last {
+	margin-bottom: 0;
+}
+.two_col_clearing {
+	height: 0;
+	clear: both;
+}
+
+      
+      
+#confirm_new_food {
+	font-size: 100%;
+}
+
+#confirm_new_food b{
+	font-size: 125%;
+	font-weight: bold;
+	color:black;
+}
+
+#confirm_new_food bigger{
+	font-size: 125%;
+}
+
+/* NAVIGATION */
+#RightArrow
+{
+  display: block;
+  width: 100px;
+  height: 61px;
+  background: url("/images/right-arrow-small+rollover.gif") no-repeat 0 0;
+
+}
+
+#RightArrow:hover {background-position: 0 -61px;}
+#RightArrow:active {background-position: 0 -61px;}
+
+#RightArrow span
+{
+  display: none;
+}
+
+#LeftArrow
+{
+  display: block;
+  width: 100px;
+  height: 61px;
+  background: url("/images/left-arrow-small+rollover.gif") no-repeat 0 0;
+
+}
+
+#LeftArrow:hover {background-position: 0 -61px;}
+#LeftArrow:active {background-position: 0 -61px;}
+
+#LeftArrow span
+{
+  display: none;
+}
+
+/* GET CALORIES PAGES */
+#MiscellanousText{
+	color:black; /* 096327 - orange */
+	font-style: italic;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 90%;
+}
+
+
+/* HOME PAGE */
+
+#Homepage_Right_Content {
+	color:black; /* 096327 - orange */
+	font-style: italic;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#Homepage_Right_Content a {
+	color:black; /* 096327 - orange */
+	font-style: italic;
+}
+
+#Homepage_Right_Content a:link {text-decoration: underline;color:black;}
+#Homepage_Right_Content a:visited {text-decoration: underline;color:black;}
+#Homepage_Right_Content a:active {text-decoration: underline;color:#096327;}
+#Homepage_Right_Content a:hover {text-decoration: underline;color:#096327;}
+
+#Homepage_leftnav a:link {text-decoration: underline;color:black;}
+#Homepage_leftnav a:visited {text-decoration: underline;color:black;}
+#Homepage_leftnav a:active {text-decoration: underline;color:#096327;}
+#Homepage_leftnav a:hover {text-decoration: underline;color:#096327;}
+
+#Homepage_Headline {
+	color:#096327; 
+	font-size: 1.4em;
+	text-align: center;
+	font-style: italic;
+}
+
+#Homepage_Title {
+	color: black; 
+	font-family: Georgia, Arial, Helvetica, sans-serif;
+	font-size: 1.4em;
+	border-bottom: 1px solid #ffaf00;
+	line-height:1.6em;
+}
+
+#bigger {
+	font-size: 125%;
+}
+
+#Homepage_Launch {
+	color: black; 
+	font-family: Georgia, Arial, Helvetica, sans-serif;
+	font-size: 1.4em;
+	border-bottom: 1px solid #ffaf00;
+	line-height:1.6em;
+	font-style: italic;
+}
+
+
+/* Two-Column Layout for Home Page */
+ #Homepage_container
+{
+	margin: 10px auto;
+}
+
+
+#Homepage_leftnav
+{
+	float: left;
+	width: 100px;
+	margin: 0;
+	padding: 1em;
+
+    font-style: italic;
+ 	font-weight: bold;   
+    color: black;
+    font-size: 90%;
+}
+
+#Homepage_content
+{
+	padding-left: 20px;
+	margin-left: 175px;
+	border-left: 1px solid black;
+	line-height:1.6em;
+
+}
+
+#Homepage_content .note {
+	display:block;
+	margin-left:150px;
+}
+
+table.homepage {
+	border-width: thin;
+	border-spacing: 2px;
+	border-style: none;
+	border-color: #096327;
+	border-collapse: collapse;
+    vertical-align: center;
+    line-height: 125%;
+    font-size: 115%;
+}
+
+table.homepage td {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 10px;
+    padding-left: 10px;
+    text-align: center;
+    font-style: italic;
+	border-width: 1px;
+	border-style: outset;
+	border-color: #096327;
+}
+
+#flashbanner {
+	text-align: right;
+}
+
+
+/* Rounded Corners */
+/* http://www.schillmania.com/content/projects/even-more-rounded-corners/ */
+/* This code works in html - but injecting divs formatted like this into Safari 2 via javascript
+	yields incorrectly positioned items. */
+	
+/* This has been fixed in Safari 3 */
+
+.dialog {
+ position:relative;
+ margin:0px 10px 0.5em 24px;
+ width:575px; /* based on image dimensions - not quite consistent with drip styles yet */
+ color:black;
+ z-index:1;
+ margin-left:12px; /* default, width of left corner */
+ margin-bottom:0.5em; /* spacing under dialog */
+ line-height: 125%;
+}
+
+.dialog a:link		{ color: black; font-weight: bold; padding: 4px;}
+.dialog a:visited	{ color: black; font-weight: bold; }
+.dialog a:active	{ color: black; font-weight: bold; }
+.dialog a:hover		{ color: #9AFF0B; font-weight: bold; }
+
+
+.dialog .content,
+.dialog .t,
+.dialog .b,
+.dialog .b div {
+ background:transparent url(/images/dialog2-light-blue.gif) no-repeat top right;
+ _background-image:url(/images/dialog2-light-blue.gif);
+}
+
+
+.dialog .content {
+ position:relative;
+ zoom:1;
+ _overflow-y:hidden;
+ padding:0px 24px 0px 0px;
+ font-size: 115%;
+}
+
+.dialog .t {
+ /* top+left vertical slice */
+ position:absolute;
+ left:0px;
+ top:0px;
+ width:12px; /* top slice width */
+ margin-left:-12px;
+ height:100%;
+ _height:1600px; /* arbitrary long height, IE 6 */
+ background-position:top left;
+}
+
+.dialog .b {
+ /* bottom */
+ position:relative;
+ width:100%;
+}
+
+.dialog .b,
+.dialog .b div {
+ height:30px; /* height of bottom cap/shade */
+ font-size:1px;
+}
+
+.dialog .b {
+ background-position:bottom right;
+}
+
+.dialog .b div {
+ position:relative;
+ width:12px; /* bottom corner width */
+ margin-left:-12px;
+ background-position:bottom left;
+}
+
+.dialog .hd,
+.dialog .bd,
+.dialog .ft {
+ position:relative;
+}
+
+.dialog .wrapper {
+ /* extra content protector - preventing vertical overflow (past background) */
+ position:static;
+ max-height:1000px;
+ overflow:auto; /* note that overflow:auto causes a rather annoying redraw "lag" in Firefox 2, and may degrade performance. Might be worth trying without if you aren't worried about height/overflow issues. */
+}
+
+.dialog h1,
+.dialog p {
+ margin:0px; /* margins will blow out backgrounds, leaving whitespace. */
+ padding:0.5em 0px 0.5em 0px;
+ text-align: center;
+}
+
+.dialog h1 {
+ padding-bottom:0px;
+}
+
+
+
+
+
+
+
+
+/* USDA Foods page */
+
+#food_description {
+	background: #fdfae9;
+	border: 1px solid #000;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+#food_description ul {
+	margin: 0;
+	padding: 0;
+	list-style:none!important;
+	list-style-image: none!important;
+}
+
+#food_description ul li {
+	margin-bottom: 10px;
+}
+
+#foods_user_may_want_to_add {
+}
+
+#foods_user_likes {
+	background: #fdfae9;
+	border: 1px solid #000;
+	padding: 10px;
+	margin-top: 10px;
+	text-align:left;
+	}
+	
+
+#foods_user_likes ul {
+	margin: 0;
+	padding: 0;
+	list-style:none!important;
+	list-style-image: none!important;
+}
+
+#foods_user_likes ul li {
+	margin-bottom: 10px;
+}
+
+
+
+#food_search_form {
+	background: #fdfae9;
+	border: 1px solid #EAEAEA;
+	padding: 10px;
+}
+
+#food_name {
+	width: 400px;
+}
+
+#search_button {
+	padding:0 25px 0 0;
+}
+
+div.autocomplete {
+      position:absolute;
+      width:250px;
+      background-color:white;
+      border:1px solid #888;
+      margin:0px;
+      padding:0px;
+}
+	
+div.autocomplete ul {
+	list-style:none!important;
+	list-style-image:none!important;
+	margin:0px;
+	padding:0px;
+}
+
+div.autocomplete ul li.selected {
+	background-color: #B9DAF0;  
+}
+
+div.autocomplete ul li {
+	font-size: small;
+	list-style-type:none;
+	display:block;
+	margin:0;
+	padding:2px;
+	cursor:pointer;
+}
+
+
+#usda_foods_Container {
+	margin: 0px;
+	padding: 0px;
+    }
+      
+#usda_foods_Sidebar {
+	width: 45%;
+	float: left;
+	margin:0; 
+	padding:0;
+	}
+      
+#usda_foods_Sidebar-Content {
+      margin:0; padding: 0;
+      }
+      
+#usda_foods_Main {
+      padding:0;
+      }
+      
+#usda_foods_Main-content {
+	width: 45%;
+	padding: 20px;
+	float: right;
+	}
+      
+hr.usda_foods_cleaner {
+      clear:both;
+      height:1px;
+      margin: -1px 0 0 0; padding:0;
+      border:none;
+      visibility: hidden;
+      }
+      
+      
+/* Autocompleter */
+/* Adapted from http://pr0digy.com/codeigniter/live-search-with-codeigniter-and-mootools/ */
+
+#container {
+	width: 600px;
+	margin: 0 auto;
+	text-align: left;
+	background: #fdfae9;  /* light cream */
+	border: 1px solid #EAEAEA;
+	 }
+
+#header {margin: 0 0 0 0;
+	padding: 5px;
+	border-bottom: 1px solid #2A2F34;
+	}
+
+#message-form-container, #form-container{
+	 padding: 10px;
+	 color: #000;
+	 }
+	
+#form-container-wrapper{
+	width: 95%;
+	background: #fdfae9;
+	border: 1px solid #000;
+	padding: 10px;
+	}
+	
+#form-container p {
+	font-weight: bold;
+	}
+	
+#message, #searchterm{
+	width: 400px}
+	
+#submit{width: 18%;
+	}
+
+#message-box{
+	width: 580px;
+	color: #fdfae9;
+	padding: 15px 10px 0 10px;
+	margin: 10px 0;
+	}
+	
+#message-box-wrapper{
+	height: 100%;
+	padding:  
+	5px 0;
+	}
+	
+#message-box span {
+	font-weight: bold;
+	}
+	
+#message-box ol {
+	list-style: decimal inside;
+	font-weight: bold;
+	}
+	
+#message-box li {
+	background: #fdfae9;
+	margin: 0 0 5px 0;
+	padding: 5px;
+	}
+	
+#message-box li p {font-weight: normal;
+	display: inline;
+	}
+	
+#search-results{
+	color: #000;
+	}
+	
+#search-results-wrapper{
+	height: 100%;
+	padding:  5px 0;
+	}	
+
+
+
+.error{font-weight: bold;
+	color: red;
+	}
+	
+.success{
+	font-weight: bold;
+	color: green;
+	}
+	
+.heading{
+	color: #000;
+	}
+	
+#submit_button_or_spinner_gif	{
+	float: left;
+}
+      
+
+.js_working {
+	background : url('/images/indicator.gif') right center no-repeat;
+}
+
+#fz_header {
+	margin: 10px;
+	border-bottom: 1px solid #ffaf00;
+}
+
+#welcome {
+	margin: 10px;
+	text-align: right;
+	font-style: italic;
+	font-size: 80%;
+}
+
+/* ================================================================ 
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.cssplay.co.uk/menus/simple_vertical.html
+Copyright (c) 2005-2007 Stu Nicholls. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any 
+way to fit your requirements.
+=================================================================== */
+
+/* Add a margin - for this demo only - and a relative position with a high z-index to make it appear over any element below */
+#menu_container {margin:0px 0px 0px 10px;
+position:relative;
+width:800px;
+height:25px;
+z-index:100;
+border-left: 1px solid #000;
+}
+
+/* Get rid of the margin, padding and bullets in the unordered lists */
+#pmenu, #pmenu ul {padding:0;
+margin:0;
+list-style-type: none;}
+
+/* Set up the link size, color and borders */
+#pmenu a, #pmenu a:visited {display:block;width:110px;
+font-size:90%;
+text-align: center;
+color:#fff;
+height:24px;
+line-height:24px;
+text-decoration:none;
+text-indent:5px;
+border-top: 1px solid #000;
+border-bottom: 1px solid #000;
+background: url("/images/menu-buttons.gif") no-repeat 0 0;
+}
+
+/* Set up the sub level borders */
+#pmenu li ul li a, #pmenu li ul li a:visited {border-width:0 1px 1px 1px;}
+#pmenu li a.enclose, #pmenu li a.enclose:visited {border-width:1px;}
+
+/* Set up the list items */
+#pmenu li {float:left;
+background:#096327;}
+
+/* pmenu li current_page added by VR */
+#pmenu li.current_page{
+	display:block;width:109px;
+	font-size:90%;
+	text-align: center;
+	color:#fff;
+	height:24px;
+	line-height:24px;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	text-decoration:none;
+	text-indent:5px;
+	background: #096327 url("/images/menu-buttons.gif") no-repeat 0 0;
+	background-position: 0 -47px;
+	color:#fff; }
+	
+#pmenu li.current_page:hover{
+	background: #096327 url("/images/menu-buttons.gif") no-repeat 0 0;
+	background-position: 0 -47px;
+	color:#fff; }
+		
+/* For Non-IE browsers and IE7 */
+#pmenu li:hover {position:relative; background-position: 0 -24px;}
+/* Make the hovered list color persist */
+#pmenu li:hover > a {background-position: 0 -24px;
+color:#fff; }
+/* Set up the sublevel lists with a position absolute for flyouts and overrun padding. The transparent gif is for IE to work */
+#pmenu li ul {display:none;}
+/* For Non-IE and IE7 make the sublevels visible on list hover. This is all it needs */
+#pmenu li:hover > ul {display:block;
+position:absolute;
+top:-11px;
+left:80px;
+padding:10px 30px 30px 30px;
+background-position: 0 -24px;
+width:120px;}
+/* Position the first sub level beneath the top level liinks */
+#pmenu > li:hover > ul {left:-30px;
+background-position: 0 -24px;
+top:16px;}
+
+/* get rid of the table */
+#pmenu table {position:absolute;
+border-collapse:collapse;
+top:0;
+left:0;
+z-index:100;
+font-size:1em;}
+
+/* For IE5.5 and IE6 give the hovered links a position relative and a change of background and foreground color. This is needed to trigger IE to show the sub levels */
+* html #pmenu li a:hover {position:relative;
+background-position: 0 -24px;
+color:#fff;}
+
+/* For accessibility of the top level menu when tabbing */
+#pmenu li a:active, #pmenu li a:focus {
+background-position: 0 -48px;
+color:#fff;}
+
+/* Set up the pointers for the sub level indication */
+/*
+#pmenu li.fly {background:#096327 url(/images/fly.gif) no-repeat right center;}
+#pmenu li.drop {background:#096327 url(/images/drop.gif) no-repeat right center;}
+*/
+
+
+/* This lot is for IE5.5 and IE6 ONLY and is necessary to make the sublevels appear */
+
+/* change the drop down levels from display:none;
+to visibility:hidden;
+*/
+* html #pmenu li ul {visibility:hidden;
+display:block;
+position:absolute;
+top:-11px;
+left:80px;
+padding:10px 30px 30px 30px;
+background:transparent url(/images/transparent.gif);}
+
+/* keep the third level+ hidden when you hover on first level link */
+#pmenu li a:hover ul ul{
+visibility:hidden;
+}
+/* keep the fourth level+ hidden when you hover on second level link */
+#pmenu li a:hover ul a:hover ul ul{
+visibility:hidden;
+}
+/* keep the fifth level hidden when you hover on third level link */
+#pmenu li a:hover ul a:hover ul a:hover ul ul{
+visibility:hidden;
+}
+/* keep the sixth level hidden when you hover on fourth level link */
+#pmenu li a:hover ul a:hover ul a:hover ul a:hover ul ul {
+visibility:hidden;
+}
+
+/* make the second level visible when hover on first level link and position it */
+#pmenu li a:hover ul {
+visibility:visible;
+left:-30px;
+top:14px;
+lef\t:-31px;
+to\p:15px;
+}
+
+/* make the third level visible when you hover over second level link and position it and all further levels */
+#pmenu li a:hover ul a:hover ul{ 
+visibility:visible;
+top:-11px;
+left:80px;
+}
+/* make the fourth level visible when you hover over third level link */
+#pmenu li a:hover ul a:hover ul a:hover ul { 
+visibility:visible;
+}
+/* make the fifth level visible when you hover over fourth level link */
+#pmenu li a:hover ul a:hover ul a:hover ul a:hover ul { 
+visibility:visible;
+}
+/* make the sixth level visible when you hover over fifth level link */
+#pmenu li a:hover ul a:hover ul a:hover ul a:hover ul a:hover ul { 
+visibility:visible;
+}
+/* If you can see the pattern in the above IE5.5 and IE6 style then you can add as many sub levels as you like */
+
+
+/*
+ Menu style inspired by examples provided by http://www.wellstyled.com/css-2col-fluid-layout.html 
+ fz_menu 
+
+#fz_menu {
+	position:absolute; z-index:100;
+	top:0; left:16px;
+	width:60%; height:75px;
+	margin:0; padding:0 0 0 25px; 
+	font-size: 90%;
+	font-weight: bold;
+	background: url('/images/FZ-Logo-4b.gif') top left no-repeat;
+	min-width: 0;
+	}
+#fz_menuin {
+	position:absolute; top: 50px; left:10px; bottom: 0; b\ottom:3px;
+	width:150%; padding: 0; paddin\g-top: 3px;
+	text-align:left;
+	white-space:nowrap;
+	border-top: 1px solid #6291CA;
+	}
+#fz_menu a, #fz_menu .selected {
+	margin: 0 0 0 10px; padding: 0 10px 0 30px; paddin\g: 5px 10px 5px 30px;
+	color:#096327;
+	background: url('/images/sqr-blue.gif') 10px 50% no-repeat;
+	white-space:nowrap;
+	position: relative;
+	}
+#fz_menu .selected {
+	color: #6291CA;
+	display:inline-block;
+	}
+
+#fz_menuin a{
+	display:inline-block;
+}
+
+#fz_menu a:hover {
+	color:white;
+	background: #6291CA url('/images/sqr-orange.gif') 10px 50% no-repeat;
+	}
+*/
+
+
+/* your_food_plan */
+
+table.food_planner {
+	border-width: thin;
+	border-spacing: 2px;
+	border-style: none;
+	border-color: #6CB8E9;
+	border-collapse: collapse;
+}
+table.food_planner th {
+	border-width: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-style: outset;
+	border-color: #6CB8E9;
+    background-color: #fff;
+}
+table.food_planner td {
+	border-width: 1px;
+	padding: 4px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border-style: outset;
+	border-color: #6CB8E9;
+}
+table.food_planner tbody tr td {
+      background-color: #fff;
+ }
+table.food_planner tbody tr.color2 td {
+      background-color: #b2dbf6;
+ }
+table.food_planner tbody tr td.highlighted {
+      background-color: #4CA1D8;
+ }
+
+
+
+
+
+
+table.food_planner_targets {
+	border-width: thin;
+	border-spacing: 2px;
+	border-style: none;
+	border-color: #6CB8E9;
+	border-collapse: collapse;
+    background-color: #fff;
+}
+table.food_planner_targets th {
+	border-width: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-style: outset;
+	border-color: #6CB8E9;
+}
+table.food_planner_targets td {
+	border-width: 1px;
+	padding: 10px;
+	border-style: outset;
+	border-color: #6CB8E9;
+}
+table.food_planner_targets td.highlighted {
+      background-color: #4CA1D8;
+ }
+
+
+#PCFSstring {
+    font-style: italic;
+ 	font-weight: bold;   
+    color: #096327;
+    font-size: 90%;
+    
+}
+
+#ShowHelpButton {
+    font-style: italic;
+ 	font-weight: normal;   
+    color: #096327;
+    font-size: 90%;
+    text-align: left;
+	vertical-align: middle; 
+}
+
+#img.middle { 
+	vertical-align: middle; 
+}
+
+/* your food plan diary */
+#diary_date {
+	color: black;
+	font-weight:bold;
+	text-align: left;
+	padding-bottom: 5px;
+}
+
+#ButtonsAtTopOfFoodDiaryEntry{
+	padding-bottom: 2px;
+}
+
+
+#PCFTotalsGoHere{
+    font-style: italic;
+ 	font-weight: bold;   
+    color: #6CB8E9;
+    font-size: 90%;
+}
+
+/* SUBSCRIPTION */
+#subscription {margin: 0;}
+
+#subscription label  {width: 150px;}
+
+#subscription_note {
+	font-size: 80%;
+}
+
+/* REGISTRATION */
+fieldset {margin:1em 0;
+padding: 1em;
+border: 1px solid #ccc;}
+
+legend {font-weight:bold;}
+
+label {float: left;
+width: 100px;}
+
+#register {margin: 0;}
+
+#register label, #changePassword label  {width: 150px;}
+
+#register .error span{
+margin-left: 150px;
+padding-left: 150px;}
+
+.note {display: block;
+margin-left: 100px;}
+
+#register.note  {display: block;
+margin-left: 150px;}
+
+
+/* CALENDAR */
+	.calendarBG {
+	 font-size:	100%; 
+	 background-color: #fdfae9;
+	 border-top: 1px solid #096327;
+	 border-left: 1px solid #096327;
+	 border-bottom: 2px solid #096327;
+	 border-right: 2px solid #096327;
+ 	}
+
+	
+	.calendarCell {
+	 text-align:  center;
+	 vertical-align: middle;
+	 padding-top: 2px;
+	 padding-bottom: 2px;
+	 padding-left: 4px;
+	 padding-right: 4px;
+	}
+	
+	.calendarCell a:link		{ color: #259af1; font-weight: bold; padding: 4px;}
+	.calendarCell a:visited	{ color: #259af1; font-weight: bold; }
+	.calendarCell a:active	{ color: #259af1; font-weight: bold; }
+	.calendarCell a:hover		{ color: #ffffff; font-weight: bold; background-color: #096327;}
+
+	.highlight {
+	}
+
+
+
+/*
+	.calendarBlank { 
+	 background-color: #FAFAFA;
+	}
+	
+	.calendarHeader { 
+	 font-size:	x-small; 
+	 font-weight: normal; 
+	 color: #0D0D0D; 
+	 text-align: center;
+	 background-color: #FAFAFA; 
+	}
+	
+	
+	.calendarDayHeading {
+	 font-weight: normal; 
+	 font-size:	x-small; 
+	 color: #0D0D0D; 
+	 background-color: #FAFAFA; 
+	 text-align:  center;
+	 vertical-align: middle;
+	}
+	
+	.calendarToday { 
+	 font-family:       Verdana, Tahoma, Helvetica, sans-serif;
+	 font-size:         x-small; 
+	 font-weight:		normal;
+	 letter-spacing:	.1em;
+	 padding-left:  4px;
+	 padding-right: 4px;
+	 padding-bottom: 4px;
+	 text-decoration:   none;
+	 text-align:  center;
+	 vertical-align: middle;
+	 color:             #0D0D0D;
+	 background-color: 	#FAFAFA;
+	}
+	
+	.calendarMonthLinks {
+	 font-family:       Verdana, Tahoma, Helvetica, sans-serif;
+	 font-size:         x-small; 
+	 font-weight:		normal;
+	 letter-spacing:	.1em;
+	 text-decoration:   none;
+	 padding-bottom: 4px;
+	 color:             #0D0D0D;
+	 background-color:  transparent;
+	}
+	
+	 .calendarHeader .sideTitle, .calendarHeader th, .calendarHeader .sideTitle th {
+	 font-weight: normal;
+	 }
+
+	.calendarMonthLinks a {
+	}
+	  
+	.calendarMonthLinks a:visited {
+	}
+	
+	.calendarMonthLinks a:hover {
+	} 
+	
+	.calendarCell a {
+	}
+	  
+	.calendarCell a:visited {
+	}
+	
+	.calendarCell a:hover {
+	}
+*/
+
+/* sequence is top right bottom left */
