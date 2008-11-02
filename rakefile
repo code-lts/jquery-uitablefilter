@@ -1,10 +1,18 @@
+SAFARI = '/Applications/Safari.app/Contents/MacOS/Safari'
 def exit_msg(msg, code=1)
   puts msg
   exit(code)
 end
 def run command
   res = `#{command}`
-  exit_msg res, $?.exitstatus if $?.exitstatus != 0
+  stat = $?.exitstatus 
+  if stat != 0
+    if block_given?
+      (return (yield res, stat))
+    else
+      exit_msg res, stat
+    end
+  end
   res
 end
 def out command
@@ -28,5 +36,8 @@ end
 
 desc "run test"
 task :test do
-  `#{ENV['BROWSER'] || 'konqueror'} #{Dir[ 'test/*_spec.html' ].join(' ')}`
+  test_files = Dir[ 'test/*_spec.html' ].join(' ')
+  run( "#{ENV['BROWSER'] || 'konqueror'} #{test_files}" ) do |r,s|
+    run( "#{SAFARI} #{test_files}" )
+  end
 end
