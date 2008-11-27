@@ -17,5 +17,8 @@ end
 
 desc "run test"
 task :test do
-  `#{ENV['BROWSER'] || 'konqueror'} #{Dir[ 'test/*_spec.html' ].join(' ')}`
+  test_files = Dir[ 'test/*_spec.html' ].join(' ')
+  run( "#{ENV['BROWSER'] || 'konqueror'} #{test_files}" ) do |r,s|
+    run( "#{SAFARI} #{test_files}" )
+  end
 end
