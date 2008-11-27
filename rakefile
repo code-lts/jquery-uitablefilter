@@ -1,15 +1,4 @@
-def exit_msg(msg, code=1)
-  puts msg
-  exit(code)
-end
-def run command
-  res = `#{command}`
-  exit_msg res, $?.exitstatus if $?.exitstatus != 0
-  res
-end
-def out command
-  (puts (run command))
-end
+require 'tasks/helpers'
 
 desc "mirror to jquery svn repository"
 task :mirror do
