@@ -33,7 +33,7 @@ jQuery.uiTableFilter = function(jq, phrase, column, ifHidden){
   if( column ) {
     var index = null;
     jq.find("thead > tr:last > th").each( function(i){
-      if( $(this).text() == column ){
+      if( $.trim($(this).text()) == column ){
         index = i; return false;
       }
     });
