@@ -1,0 +1,33 @@
+uiTableFilter
+- jquery plugin for filtering table rows
+
+download
+http://plugins.jquery.com/project/uiTableFilter
+
+author and license
+copyright Greg Weber dual licensed under GPL and MIT
+
+personal demo
+http://projects.gregweber.info/demo/flavorzoom.html
+
+outside demo
+http://silverwareconsulting.com/index.cfm/2008/10/2/jquery-autofiltering-table
+this is a nice example that ties this plugin with the tablesorter plugin
+
+usage
+
+              t = $('table')
+              $.uiTableFilter( t, phrase )
+            
+
+arguments:
+
+    * jQuery object containing table rows
+    * phrase to search for
+
+optional arguments:
+              $.uiTableFilter( t, phrase, column, ifHidden )
+
+    * column to limit search too (the column title in the table header)
+    * ifHidden - callback to execute if one or more elements was hidden
+
