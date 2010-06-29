@@ -1,8 +1,7 @@
 /*
  * Copyright (c) 2008 Greg Weber greg at gregweber.info
- * Dual licensed under the MIT and GPL licenses:
- * http://www.opensource.org/licenses/mit-license.php
- * http://www.gnu.org/licenses/gpl.html
+ * Dual licensed under the MIT and GPLv2 licenses just as jQuery is:
+ * http://jquery.org/license
  *
  * documentation at http://gregweber.info/projects/uitablefilter
  *
