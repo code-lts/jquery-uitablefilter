@@ -27,6 +27,7 @@ arguments:
 
     * jQuery object containing table rows
     * phrase to search for
+      - If the phrase contains spaces it will be broken up into separate words that must all match a row
 
 optional arguments:
               $.uiTableFilter( t, phrase, column, ifHidden )
