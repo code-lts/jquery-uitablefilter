@@ -56,11 +56,11 @@
 
       // only hide visible rows
       matches = function(elem) {;}
-      var elems = jq.find("tbody > tr:visible")
+      var elems = jq.find("tbody:first > tr:visible")
     }
     else {
       new_hidden = true;
-      var elems = jq.find("tbody > tr")
+      var elems = jq.find("tbody:first > tr")
     }
 
     elems.each(function(){
