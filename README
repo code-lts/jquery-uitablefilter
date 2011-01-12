@@ -35,3 +35,5 @@ optional arguments:
     * column to limit search too (the column title in the table header)
     * ifHidden - callback to execute if one or more elements was hidden
 
+Warning:
+* expects a thead and tbody element
