@@ -7,8 +7,7 @@
  *
  * allows table rows to be filtered (made invisible)
  * <code>
- * t = $('table')
- * $.uiTableFilter( t, phrase )
+ * $('table').uiTableFilter(phrase )
  * </code>
  * arguments:
  *   jQuery object containing table rows
@@ -18,9 +17,10 @@
  *     ifHidden - callback to execute if one or more elements was hidden
 ###
 (($) ->
-  $.uiTableFilter = (jq, phrase, column, ifHidden) ->
+  $.fn.uiTableFilter = (phrase, column, ifHidden) ->
+    jq = $(this)
     new_hidden = false;
-    return false if this.last_phrase == phrase
+    return false if $.fn.uiTableFilter.last_phrase == phrase
 
     phrase_length = phrase.length
     words = phrase.toLowerCase().split(" ")
@@ -44,9 +44,9 @@
 
     # if added one letter to last time,
     # just check newest word and only need to hide
-    if (words.size > 1) && (phrase.substr(0, phrase_length - 1) == this.last_phrase)
+    if (words.size > 1) && (phrase.substr(0, phrase_length - 1) == $.fn.uiTableFilter.last_phrase)
       if phrase[-1] == " "
-        this.last_phrase = phrase
+        $.fn.uiTableFilter.last_phrase = phrase
         return false
 
       words = words[-1] # just search for the newest word
@@ -60,7 +60,7 @@
 
     elems.each(->
       elem = $(this)
-      if $.uiTableFilter.has_words( getText(elem), words, false )
+      if $.fn.uiTableFilter.has_words( getText(elem), words, false )
         matches(elem)
       else
         noMatch(elem)
@@ -71,12 +71,12 @@
     return jq
 
   # caching for speedup
-  $.uiTableFilter.last_phrase = ""
+  $.fn.uiTableFilter.last_phrase = ""
 
   # not jQuery dependent
   # "" [""] -> Boolean
   # "" [""] Boolean -> Boolean
-  $.uiTableFilter.has_words = ( str, words, caseSensitive ) ->
+  $.fn.uiTableFilter.has_words = ( str, words, caseSensitive ) ->
     text = caseSensitive ? str : str.toLowerCase()
     for word in words
       return false if text.indexOf(word) == -1
