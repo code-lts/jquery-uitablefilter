@@ -2,11 +2,19 @@
 
 - jquery plugin for filtering table rows
 
+# alternatives
+
+This plugin is very light-weight (please [look at the source](https://github.com/gregwebs/jquery-uitablefilter/blob/master/jquery.uitablefilter.js)). I consider it finished, and have no plans to add any features. It works quickly for small data sets without consuming any extra memory (that would be needed for faster filtering).
+
+I often use the [DataTables](http://datatables.net/) plugin when I have greater table needs.
 
 ## download
 
 click Download link at bottom of:
 http://plugins.jquery.com/project/uiTableFilter
+
+That link seems to be broken now.
+You can simply download the [latest code from github](https://raw.github.com/gregwebs/jquery-uitablefilter/master/jquery.uitablefilter.js)
 
 
 ## source code
@@ -33,7 +41,7 @@ this is a nice example that ties this plugin with the tablesorter plugin
 
 ## usage
 
-              t = $('table')
+              var t = $('table')
               $.uiTableFilter( t, phrase )
             
 
@@ -51,4 +59,5 @@ optional arguments:
 
 
 ## Warning:
+
 * expects a thead and tbody element
