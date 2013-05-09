@@ -24,7 +24,7 @@ http://github.com/gregwebs/jquery-uitablefilter
 
 ## author and license
 
-copyright Greg Weber dual licensed under GPL and MIT
+copyright Greg Weber. MIT licensed.
 
 
 ## Demos
