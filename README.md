@@ -8,6 +8,7 @@ This plugin is very light-weight (please [look at the source](https://github.com
 
 * I have used the [DataTables](http://datatables.net/) plugin when I have greater table needs.
 * I recently saw this [fancy tablequeryjs filter](https://github.com/asimihsan/tablequeryjs) plugin.
+* There is a [List.js plugin](http://listjs.com/)
 
 If you use a javascript framework which keeps the table data in memory (backbone.js, etc)
 then all you have to do is add a hook to automatically re-reunder the table.
