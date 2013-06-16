@@ -6,7 +6,13 @@
 
 This plugin is very light-weight (please [look at the source](https://github.com/gregwebs/jquery-uitablefilter/blob/master/jquery.uitablefilter.js)). I consider it finished, and have no plans to add any features. It works quickly for small data sets without consuming any extra memory (that would be needed for faster filtering).
 
-I often use the [DataTables](http://datatables.net/) plugin when I have greater table needs.
+* I have used the [DataTables](http://datatables.net/) plugin when I have greater table needs.
+* I recently saw this [fancy tablequeryjs filter](https://github.com/asimihsan/tablequeryjs) plugin.
+
+If you use a javascript framework which keeps the table data in memory (backbone.js, etc)
+then all you have to do is add a hook to automatically re-reunder the table.
+If you are using a framework like AngularJS the table will be re-rendered automatically.
+So it is probably very easy to just roll your own table filter.
 
 ## download
 
