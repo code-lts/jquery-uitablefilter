@@ -7,7 +7,7 @@ If you don't want to create any filter, just put an empty array as argument.
 ##Download
 Download the latest version here : https://raw.github.com/natinusala/jquery-uitablefilter/master/jquery.uitablefilter.js
 ##Example
-Here is an example (see the original project README for more informations). It will search the word 'Pepper' in #table in columns 'Price', 'Item' and 'ID'.
+Here is an example (see the original project README for more informations). It will search for the word 'Pepper' in #table in columns 'Price', 'Item' and 'ID'.
 ```
 $.uiTableFilter( $("#table"), "Pepper",  ["Price", "Item", "D"]);
 ```
