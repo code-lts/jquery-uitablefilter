@@ -33,20 +33,29 @@
     var noMatch = function(elem) { elem.hide(); new_hidden = true }
     var getText = function(elem) { return elem.text() }
 
-    if( column && column.length != 0 ) 
+    if( column ) 
     {
-      var index = new Array();
+      if (!$.isArray(column))
+      {
+        column = new Array(column);
+      }
+	  
+      var index = new Array(); 
       
       for (var j = 0; j < column.length; j++)
       {
           jq.find("thead > tr:last > th").each(function(i) {
-              if ($.trim($(this).text()) == column[j]) {
+
+              if ($.trim($(this).text()) == column[j])
+              {
                   index[j] = i;
                   return false;
               }
-          });
-      }      
 
+          });
+
+      }
+         
       getText = function(elem) {
           var selector = "";
           for (var i = 0; i < index.length; i++)

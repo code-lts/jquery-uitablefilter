@@ -2,7 +2,7 @@
 https://github.com/gregwebs/jquery-uitablefilter
 ##What's new ?
 With this version the 'column' argument has been modified to be an array of columns instead of being just one column.
-Consequently, the script is now able to search in several columns. If you want the original behaviour back, put an array with only one entry.
+Consequently, the script is now able to search in several columns. If you want the original behaviour back, you can put a simple String.
 If you don't want to create any filter, just put an empty array as argument.
 ##Download
 Download the latest version here : https://raw.github.com/natinusala/jquery-uitablefilter/master/jquery.uitablefilter.js
