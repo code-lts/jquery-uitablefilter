@@ -3,7 +3,10 @@
  * Dual licensed under the MIT and GPLv2 licenses just as jQuery is:
  * http://jquery.org/license
  *
+ * Multi-columns fork by natinusala 
+ *
  * documentation at http://gregweber.info/projects/uitablefilter
+ *                  https://github.com/natinusala/jquery-uitablefilter
  *
  * allows table rows to be filtered (made invisible)
  * <code>
@@ -14,7 +17,7 @@
  *   jQuery object containing table rows
  *   phrase to search for
  *   optional arguments:
- *     column to limit search too (the column title in the table header)
+ *     array of columns to limit search too (the column title in the table header)
  *     ifHidden - callback to execute if one or more elements was hidden
  */
 (function($) {
@@ -30,17 +33,28 @@
     var noMatch = function(elem) { elem.hide(); new_hidden = true }
     var getText = function(elem) { return elem.text() }
 
-    if( column ) {
-      var index = null;
-      jq.find("thead > tr:last > th").each( function(i){
-        if( $.trim($(this).text()) == column ){
-          index = i; return false;
-        }
-      });
-      if( index == null ) throw("given column: " + column + " not found")
+    if( column && column.length != 0 ) 
+    {
+      var index = new Array();
+      
+      for (var j = 0; j < column.length; j++)
+      {
+          jq.find("thead > tr:last > th").each(function(i) {
+              if ($.trim($(this).text()) == column[j]) {
+                  index[j] = i;
+                  return false;
+              }
+          });
+      }      
 
-      getText = function(elem){ return $(elem.find(
-        ("td:eq(" + index + ")")  )).text()
+      getText = function(elem) {
+          var selector = "";
+          for (var i = 0; i < index.length; i++)
+          {
+              if (i != 0) {selector += ",";}
+              selector += "td:eq(" + index[i] + ")";
+          }
+          return $(elem.find((selector))).text();
       }
     }
 
