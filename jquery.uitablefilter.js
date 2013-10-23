@@ -42,19 +42,18 @@
 	  
       var index = new Array(); 
       
-      for (var j = 0; j < column.length; j++)
+      jq.find("thead > tr:last > th").each(function(i) 
       {
-          jq.find("thead > tr:last > th").each(function(i) {
-
+          for (var j = 0; j < column.length; j++)
+          {     
               if ($.trim($(this).text()) == column[j])
               {
                   index[j] = i;
-                  return false;
-              }
+                  break;
+              }           
+          }
 
-          });
-
-      }
+      });
          
       getText = function(elem) {
           var selector = "";
