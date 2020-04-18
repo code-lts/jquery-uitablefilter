@@ -1,240 +1,265 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-<title>JSSpec results</title>
-<link rel="stylesheet" type="text/css" href="JSSpec.css" />
-<script type="text/javascript" src="../lib/jquery-1.2.3.js"></script>
-<!--
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <title>JSSpec results</title>
+  <link rel="stylesheet" type="text/css" href="JSSpec.css" />
+  <!--
 <script type="text/javascript" src="../../public/javascripts/jquery.debug.js"></script>
  -->
-<script type="text/javascript" src="../jquery.uitablefilter.js"></script>
-<script type="text/javascript" src="diff_match_patch.js"></script>
-<script type="text/javascript" src="JSSpec.js"></script>
-<script type="text/javascript">// <![CDATA[
+  <script type="text/javascript" src="../jquery.uitablefilter.js"></script>
+  <script type="text/javascript" src="diff_match_patch.js"></script>
+  <script type="text/javascript" src="JSSpec.js"></script>
+  <script type="text/javascript">// <![CDATA[
 
-describe('has_words', {
-  before_all : function(){
-    thw = 'test has words'
-    has_words = $.uiTableFilter.has_words
-  },
+    describe('has_words', {
+      before_all: function () {
+        thw = 'test has words'
+        has_words = $.uiTableFilter.has_words
+      },
 
-  'should return true when word is present' : function(){
-    value_of(has_words(thw, ['t'])).should_be_true()
-    value_of(has_words(thw, ['t'])).should_be_true()
-    value_of(has_words(thw, ['te'])).should_be_true()
-    value_of(has_words(thw, ['tes'])).should_be_true()
-    value_of(has_words(thw, ['test'])).should_be_true()
-    value_of(has_words(thw, [' has '])).should_be_true()
-    value_of(has_words(thw, ['words'])).should_be_true()
-    value_of(has_words(thw, ['test has words'])).should_be_true()
-    value_of(has_words(thw, ['test','has'])).should_be_true()
-    value_of(has_words(thw, ['test','has','words'])).should_be_true()
-  },
-  'should return false when word is not present' : function(){
-    value_of(has_words(thw, ['z'])).should_be_false()
-    value_of(has_words(thw, ['tz'])).should_be_false()
-    value_of(has_words(thw, ['t','z'])).should_be_false()
-    value_of(has_words(thw, ['test has z'])).should_be_false()
-    value_of(has_words(thw, ['test','has','z'])).should_be_false()
-  },
-  'should be optionally case sensitive' : function(){
-    value_of(has_words(thw, ['T'], true)).should_be_false()
-    value_of(has_words(thw, ['tE'], true)).should_be_false()
-    value_of(has_words(thw, ['t','wOr'], true)).should_be_false()
-    value_of(has_words(thw, ['test has'], false)).should_be_true()
-  }
-})
+      'should return true when word is present': function () {
+        value_of(has_words(thw, ['t'])).should_be_true()
+        value_of(has_words(thw, ['t'])).should_be_true()
+        value_of(has_words(thw, ['te'])).should_be_true()
+        value_of(has_words(thw, ['tes'])).should_be_true()
+        value_of(has_words(thw, ['test'])).should_be_true()
+        value_of(has_words(thw, [' has '])).should_be_true()
+        value_of(has_words(thw, ['words'])).should_be_true()
+        value_of(has_words(thw, ['test has words'])).should_be_true()
+        value_of(has_words(thw, ['test', 'has'])).should_be_true()
+        value_of(has_words(thw, ['test', 'has', 'words'])).should_be_true()
+      },
+      'should return false when word is not present': function () {
+        value_of(has_words(thw, ['z'])).should_be_false()
+        value_of(has_words(thw, ['tz'])).should_be_false()
+        value_of(has_words(thw, ['t', 'z'])).should_be_false()
+        value_of(has_words(thw, ['test has z'])).should_be_false()
+        value_of(has_words(thw, ['test', 'has', 'z'])).should_be_false()
+      },
+      'should be optionally case sensitive': function () {
+        value_of(has_words(thw, ['T'], true)).should_be_false()
+        value_of(has_words(thw, ['tE'], true)).should_be_false()
+        value_of(has_words(thw, ['t', 'wOr'], true)).should_be_false()
+        value_of(has_words(thw, ['test has'], false)).should_be_true()
+      }
+    })
 
-describe('filterNormalTable', {
-  before_all : function(){
-    var theTable = $("#testtable")
-    filter = function(pattern) {
-        $.uiTableFilter( theTable, pattern, 0 );
-    }
-    
-    resetFilter = function(){
-        filter('');
-    }
-  },
+    describe('filterNormalTable', {
+      before_all: function () {
+        var theTable = $("#testtable")
+        filter = function (pattern) {
+          $.uiTableFilter(theTable, pattern, 0);
+        }
 
-  after_each : function(){
-    resetFilter();
-  },
+        resetFilter = function () {
+          filter('');
+        }
+      },
 
-  'no filter, all rows must be visible' : function(){
-    
-    filter('')
-    value_of($('#headrow:visible').html()).should_be($('#headrow').html())
-    value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
-    value_of($('#testrow2:visible').html()).should_be($('#testrow2').html())
-  },
+      after_each: function () {
+        resetFilter();
+      },
 
-  'simple filter 1' : function(){
+      'no filter, all rows must be visible': function () {
 
-    filter('turtle')
-    value_of($('#headrow:visible').html()).should_be($('#headrow').html())
-    value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
-    value_of($('#testrow2:visible').html()).should_be_null()
-  },
+        filter('')
+        value_of($('#headrow:visible').html()).should_be($('#headrow').html())
+        value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
+        value_of($('#testrow2:visible').html()).should_be($('#testrow2').html())
+      },
 
-  'simple filter 2' : function(){
+      'simple filter 1': function () {
 
-    filter('dog')
-    value_of($('#headrow:visible').html()).should_be($('#headrow').html())
-    value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
-    value_of($('#testrow2:visible').html()).should_be_null()
-  },
+        filter('turtle')
+        value_of($('#headrow:visible').html()).should_be($('#headrow').html())
+        value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
+        value_of($('#testrow2:visible').html()).should_be_null()
+      },
 
-  'simple filter 3' : function(){
+      'simple filter 2': function () {
 
-    filter('whale')
-    value_of($('#headrow:visible').html()).should_be($('#headrow').html())
-    value_of($('#testrow1:visible').html()).should_be_null()
-    value_of($('#testrow2:visible').html()).should_be($('#testrow2').html())
-  },
+        filter('dog')
+        value_of($('#headrow:visible').html()).should_be($('#headrow').html())
+        value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
+        value_of($('#testrow2:visible').html()).should_be_null()
+      },
 
- 'simple head filter (head must still be visible)' : function(){
-    
-    filter('sea')
-    value_of($('#headrow:visible').html()).should_be($('#headrow').html())
-    value_of($('#testrow1:visible').html()).should_be_null()
-    value_of($('#testrow2:visible').html()).should_be_null()
-  } ,
+      'simple filter 3': function () {
 
-  'simple filter an resetFilter' : function(){
-    filter('turtle')
-    value_of($('#headrow:visible').html()).should_be($('#headrow').html())
-    value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
-    value_of($('#testrow2:visible').html()).should_be_null()
-    filter('')
-    value_of($('#headrow:visible').html()).should_be($('#headrow').html())
-    value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
-    value_of($('#testrow2:visible').html()).should_be($('#testrow2').html())
-  }
-})
+        filter('whale')
+        value_of($('#headrow:visible').html()).should_be($('#headrow').html())
+        value_of($('#testrow1:visible').html()).should_be_null()
+        value_of($('#testrow2:visible').html()).should_be($('#testrow2').html())
+      },
+
+      'simple head filter (head must still be visible)': function () {
+
+        filter('sea')
+        value_of($('#headrow:visible').html()).should_be($('#headrow').html())
+        value_of($('#testrow1:visible').html()).should_be_null()
+        value_of($('#testrow2:visible').html()).should_be_null()
+      },
+
+      'simple filter an resetFilter': function () {
+        filter('turtle')
+        value_of($('#headrow:visible').html()).should_be($('#headrow').html())
+        value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
+        value_of($('#testrow2:visible').html()).should_be_null()
+        filter('')
+        value_of($('#headrow:visible').html()).should_be($('#headrow').html())
+        value_of($('#testrow1:visible').html()).should_be($('#testrow1').html())
+        value_of($('#testrow2:visible').html()).should_be($('#testrow2').html())
+      }
+    })
 
 
-describe('filterInnerTable', {
-  before_all : function(){
-    var theTable = $("#testtable2")
-    filter = function(pattern) {
-        $.uiTableFilter( theTable, pattern, 0 );
-    }
-    
-    resetFilter = function(){
-        filter('');
-    }
-  },
+    describe('filterInnerTable', {
+      before_all: function () {
+        var theTable = $("#testtable2")
+        filter = function (pattern) {
+          $.uiTableFilter(theTable, pattern, 0);
+        }
 
-  after_each : function(){
-    resetFilter();
-  },
+        resetFilter = function () {
+          filter('');
+        }
+      },
 
-  'no filter, all rows must be visible' : function(){
-    
-    filter('')
-    value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
-    value_of($('#testrow2.1:visible').html()).should_be($('#testrow2.1').html())
-    value_of($('#testrow2.2:visible').html()).should_be($('#testrow2.2').html())
-    value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
-    value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
-    value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
-  },
-    
-    
-  'filter for non existing value' : function(){
+      after_each: function () {
+        resetFilter();
+      },
 
-    filter('blaBlubb')
-    value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
-    value_of($('#testrow2.1:visible').html()).should_be($('#testrow2.1').html())
-    value_of($('#testrow2.2:visible').html()).should_be_null()
-    value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
-    value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
-    value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
-  },
+      'no filter, all rows must be visible': function () {
 
- 'filter for existing value (complete inner table must disappear)' : function(){
+        filter('')
+        value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
+        value_of($('#testrow2.1:visible').html()).should_be($('#testrow2.1').html())
+        value_of($('#testrow2.2:visible').html()).should_be($('#testrow2.2').html())
+        value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
+        value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
+        value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
+      },
 
-    filter('whale')
-    value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
-    value_of($('#testrow2.1:visible').html()).should_be_null()
-    value_of($('#testrow2.2:visible').html()).should_be_null()
-    value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
-    value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
-    value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
-  },
 
-  'filter for existing value which is in the inner table (all rows should disappear, but inner table should be (theoreticaly) visible)' : function(){
+      'filter for non existing value': function () {
 
-    filter('turtle')
-    value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
-    value_of($('#testrow2.1:visible').html()).should_be($('#testrow2.1').html())
-    value_of($('#testrow2.2:visible').html()).should_be_null()
-    value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
-    value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
-    value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
-  }
-    
+        filter('blaBlubb')
+        value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
+        value_of($('#testrow2.1:visible').html()).should_be($('#testrow2.1').html())
+        value_of($('#testrow2.2:visible').html()).should_be_null()
+        value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
+        value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
+        value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
+      },
 
-})
+      'filter for existing value (complete inner table must disappear)': function () {
+
+        filter('whale')
+        value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
+        value_of($('#testrow2.1:visible').html()).should_be_null()
+        value_of($('#testrow2.2:visible').html()).should_be_null()
+        value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
+        value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
+        value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
+      },
+
+      'filter for existing value which is in the inner table (all rows should disappear, but inner table should be (theoreticaly) visible)': function () {
+
+        filter('turtle')
+        value_of($('#headrow2:visible').html()).should_be($('#headrow2').html())
+        value_of($('#testrow2.1:visible').html()).should_be($('#testrow2.1').html())
+        value_of($('#testrow2.2:visible').html()).should_be_null()
+        value_of($('#innerHeadRow:visible').html()).should_be($('#innerHeadRow').html())
+        value_of($('#innerRow1:visible').html()).should_be($('#innerRow1').html())
+        value_of($('#innerRow2:visible').html()).should_be($('#innerRow2').html())
+      }
+
+
+    })
 
 // ]]></script>
 </head>
+
 <body>
   <div id="specloadfailure">
-    <p> <h1> Error running specs !!!! </h1> <h3> most likely a syntax error </h3> </p>
+    <p>
+      <h1> Error running specs !!!! </h1>
+      <h3> most likely a syntax error </h3>
+    </p>
     <table id="pretesttable" style="display:none;">
       <thead id="pretesthead">
-        <tr id="preheadrow"> <th>foo</th><th>bar</th> </tr>
+        <tr id="preheadrow">
+          <th>foo</th>
+          <th>bar</th>
+        </tr>
       </thead>
-      <tbody> <tr id="pretestrow1"> <td>foo</td><td>bar</td> </tr> </tbody>
+      <tbody>
+        <tr id="pretestrow1">
+          <td>foo</td>
+          <td>bar</td>
+        </tr>
+      </tbody>
     </table>
 
     <table id="testtable">
       <thead id="testhead">
-        <tr id="headrow"> <th>sea</th><th>land</th> </tr>
+        <tr id="headrow">
+          <th>sea</th>
+          <th>land</th>
+        </tr>
       </thead>
       <tbody>
-        <tr id="testrow1"> <td>turtle</td><td>dog</td> </tr>
-        <tr id="testrow2"> <td>whale</td><td>monkey</td> </tr>
+        <tr id="testrow1">
+          <td>turtle</td>
+          <td>dog</td>
+        </tr>
+        <tr id="testrow2">
+          <td>whale</td>
+          <td>monkey</td>
+        </tr>
       </tbody>
     </table>
 
     <table id="testtable2">
       <thead id="testhead2">
-        <tr id="headrow2"> <th>sea</th><th>land</th> </tr>
+        <tr id="headrow2">
+          <th>sea</th>
+          <th>land</th>
+        </tr>
       </thead>
       <tbody>
-        <tr id="testrow2.1"> 
-            <td>turtle</td>
-            <td>
-                <table id="innerTable">
-                    <thead id="innerHead">
-                        <tr id="innerHeadRow">
-                            <th>innerHead1 mine</th>
-                            <th>innerHead2 yours</th>   
-                        </tr>
-                    </thead>
-                    <tbody id="innerBody">
-                        <tr id="innerRow1">
-                            <td>innerRow1.1 duck turtle</td>
-                            <td>innerRow1.2 horse</td>  
-                        </tr>
-                        <tr id="innerRow2">
-                            <td>innerRow2.1 cat</td>
-                            <td>innerRow2.2 dog</td>    
-                        </tr>
-                    </tbody>
-                </table>
-            </td> 
+        <tr id="testrow2.1">
+          <td>turtle</td>
+          <td>
+            <table id="innerTable">
+              <thead id="innerHead">
+                <tr id="innerHeadRow">
+                  <th>innerHead1 mine</th>
+                  <th>innerHead2 yours</th>
+                </tr>
+              </thead>
+              <tbody id="innerBody">
+                <tr id="innerRow1">
+                  <td>innerRow1.1 duck turtle</td>
+                  <td>innerRow1.2 horse</td>
+                </tr>
+                <tr id="innerRow2">
+                  <td>innerRow2.1 cat</td>
+                  <td>innerRow2.2 dog</td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
         </tr>
-        <tr id="testrow2.2"> 
-            <td>whale</td>
-            <td>monkey</td> 
+        <tr id="testrow2.2">
+          <td>whale</td>
+          <td>monkey</td>
         </tr>
       </tbody>
     </table>
   </div>
 </body>
+
 </html>
