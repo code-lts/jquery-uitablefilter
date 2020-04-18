@@ -8,5 +8,12 @@
 		"name": "Greg Weber",
 		"email": "greg@gregweber.info"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"homepage": "https://github.com/gregwebs/jquery-uitablefilter#readme",
+	"keywords": [
+		"jquery",
+		"ui",
+		"uitablefilter"
+	],
+	"readme": "https://github.com/gregwebs/jquery-uitablefilter#readme"
 }
