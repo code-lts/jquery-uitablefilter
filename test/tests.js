@@ -136,9 +136,9 @@ describe('filterInnerTable', () => {
         expect($('#headrow2:visible').html()).to.equal($('#headrow2').html())
         expect($('#testrow2.1:visible').html()).to.equal($('#testrow2.1').html())
         expect($('#testrow2.2:visible').html()).to.equal(undefined);
-        expect($('#innerHeadRow:visible').html()).to.equal($('#innerHeadRow').html())
-        expect($('#innerRow1:visible').html()).to.equal($('#innerRow1').html())
-        expect($('#innerRow2:visible').html()).to.equal($('#innerRow2').html())
+        expect($('#innerHeadRow:visible').html()).to.equal(undefined);//to.equal($('#innerHeadRow').html())
+        expect($('#innerRow1:visible').html()).to.equal(undefined);//to.equal($('#innerRow1').html())
+        expect($('#innerRow2:visible').html()).to.equal(undefined);//to.equal($('#innerRow2').html())
     });
 
     it('filter for existing value (complete inner table must disappear)', function() {
@@ -147,9 +147,9 @@ describe('filterInnerTable', () => {
         expect($('#headrow2:visible').html()).to.equal($('#headrow2').html())
         expect($('#testrow2.1:visible').html()).to.equal(undefined);
         expect($('#testrow2.2:visible').html()).to.equal(undefined);
-        expect($('#innerHeadRow:visible').html()).to.equal($('#innerHeadRow').html())
-        expect($('#innerRow1:visible').html()).to.equal($('#innerRow1').html())
-        expect($('#innerRow2:visible').html()).to.equal($('#innerRow2').html())
+        expect($('#innerHeadRow:visible').html()).to.equal(undefined);//to.equal($('#innerHeadRow').html())
+        expect($('#innerRow1:visible').html()).to.equal(undefined);//to.equal($('#innerRow1').html())
+        expect($('#innerRow2:visible').html()).to.equal(undefined);//to.equal($('#innerRow2').html())
     });
 
     it('filter for existing value which is in the inner table (all rows should disappear, but inner table should be (theoreticaly) visible)', function() {
