@@ -15,5 +15,10 @@
 		"ui",
 		"uitablefilter"
 	],
-	"readme": "https://github.com/gregwebs/jquery-uitablefilter#readme"
+	"readme": "https://github.com/gregwebs/jquery-uitablefilter#readme",
+	"dependencies": {},
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^7.1.1"
+	}
 }
