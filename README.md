@@ -1,5 +1,7 @@
 # Repository
 
+[![npm version](https://badge.fury.io/js/jquery-uitablefilter.svg)](https://badge.fury.io/js/jquery-uitablefilter)
+
 https://github.com/gregwebs/jquery-uitablefilter
 
 ## What's new ?
