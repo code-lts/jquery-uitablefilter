@@ -1,0 +1,12 @@
+{
+	"name": "jquery-uitablefilter",
+	"version": "1.0.0",
+	"description": "jQuery UI table filter",
+	"main": "jquery.uitablefilter.js",
+	"repository": "https://github.com/natinusala/jquery-uitablefilter",
+	"author": {
+		"name": "Greg Weber",
+		"email": "greg@gregweber.info"
+	},
+	"license": "MIT"
+}
