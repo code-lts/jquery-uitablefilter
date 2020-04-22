@@ -4,11 +4,6 @@
 
 https://github.com/gregwebs/jquery-uitablefilter
 
-## What's new ?
-With this version the 'column' argument has been modified to be an array of columns instead of being just one column.
-Consequently, the script is now able to search in several columns. If you want the original behaviour back, you can put a simple String.
-If you don't want to create any filter, just put an empty array as argument.
-
 ## Download
 Download the latest version here : https://github.com/gregwebs/jquery-uitablefilter/blob/master/jquery.uitablefilter.js
 
@@ -29,3 +24,7 @@ Here is an example (see the original project README for more informations). It w
 ```js
 $.uiTableFilter($('#table'), 'Pepper',  ['Price', 'Item', 'D']);
 ```
+
+## Demo
+
+Here is a [http://gregwebs.github.io/jquery-uitablefilter/demo/flavorzoom/](demo).
