@@ -2,10 +2,10 @@
 
 [![npm version](https://badge.fury.io/js/jquery-uitablefilter.svg)](https://badge.fury.io/js/jquery-uitablefilter)
 
-https://github.com/gregwebs/jquery-uitablefilter
+https://github.com/code-tls/jquery-uitablefilter
 
 ## Download
-Download the latest version here : https://github.com/gregwebs/jquery-uitablefilter/blob/master/jquery.uitablefilter.js
+Download the latest version here : https://github.com/code-tls/jquery-uitablefilter/blob/master/jquery.uitablefilter.js
 
 ## Install
 
@@ -27,4 +27,4 @@ $.uiTableFilter($('#table'), 'Pepper',  ['Price', 'Item', 'D']);
 
 ## Demo
 
-Here is a [http://gregwebs.github.io/jquery-uitablefilter/demo/flavorzoom/](demo).
+Here is a [http://code-tls.github.io/jquery-uitablefilter/demo/flavorzoom/](demo).

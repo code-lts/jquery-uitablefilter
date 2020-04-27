@@ -3,19 +3,19 @@
 	"version": "1.0.0",
 	"description": "jQuery UI table filter",
 	"main": "jquery.uitablefilter.js",
-	"repository": "https://github.com/gregwebs/jquery-uitablefilter",
+	"repository": "https://github.com/code-tls/jquery-uitablefilter",
 	"author": {
 		"name": "Greg Weber",
 		"email": "greg@gregweber.info"
 	},
 	"license": "MIT",
-	"homepage": "https://github.com/gregwebs/jquery-uitablefilter#readme",
+	"homepage": "https://github.com/code-tls/jquery-uitablefilter#readme",
 	"keywords": [
 		"jquery",
 		"ui",
 		"uitablefilter"
 	],
-	"readme": "https://github.com/gregwebs/jquery-uitablefilter#readme",
+	"readme": "https://github.com/code-tls/jquery-uitablefilter#readme",
 	"dependencies": {},
 	"devDependencies": {
 		"chai": "^4.2.0",
